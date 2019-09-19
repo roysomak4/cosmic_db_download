@@ -27,23 +27,7 @@ def main():
     # download the actual database file
     print('Downloading file from COSMIC...')
     sh.bash("-c", f"curl '{auth_download_link}' -o {output_filename}", _fg=True)
-    
-    # with open(output_filenam
-    #     response = requests.get(auth_download_link, stream=True)
-    #     filesize = response.headers.get('content-length')
-    #     print(f'Filesize is {str(int(filesize)/1024)} KB')
-    #     if filesize is None:
-    #         f.write(response.content)
-    #     else:
-    #         downloaded = 0
-    #         total = int(filesize)
-    #         with progressbar.ProgressBar(max_value=total) as pbar:
-    #             for data in response.iter_content(chunk_size=max(int(total/1000), 1024*1024)):
-    #                 downloaded += len(data)
-    #                 f.write(data)
-    #                 progress = int(50 * downloaded/total)
-    #                 pbar.update(progress)
-        
+            
 
 def get_cosmic_download_link(url, creds):
     headers = {'Authorization': f'Basic {creds}'}
